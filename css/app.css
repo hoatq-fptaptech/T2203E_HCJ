@@ -15,7 +15,7 @@ p{
     text-decoration: none;/* underline line-through overline none*/
     text-indent: 50px;
     font-weight: 400;
-    font-family: "Times New Roman";
+    font-family: 'Roboto', sans-serif;
 
     /*text-shadow: 0 0 1px red;*/
     width: 600px;
@@ -23,6 +23,7 @@ p{
 }
 b{
     color: white;
+    font-family: 'Noto Sans', sans-serif;
 }
 p i > b{
     color: red;
