@@ -1,0 +1,36 @@
+body{
+   background-color: beige;
+    background-image: url("../images/bg.jpeg");
+    background-size: cover;
+}
+h1{
+    color:red;
+}
+p{
+    color: #ff6fc3;
+    font-size: 26px;
+    line-height: 1.25;
+    text-align: justify;/* left right center*/
+    text-transform: none;/* uppercase lowercase capitalize none */
+    text-decoration: none;/* underline line-through overline none*/
+    text-indent: 50px;
+    font-weight: 400;
+    font-family: "Times New Roman";
+
+    /*text-shadow: 0 0 1px red;*/
+    width: 600px;
+    background-color: #faebd7;
+}
+b{
+    color: white;
+}
+p i > b{
+    color: red;
+}
+a{
+    color: deeppink;
+    text-decoration: none;
+}
+a:hover{
+    color: yellowgreen;
+}
