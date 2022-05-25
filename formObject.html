@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Object</title>
+</head>
+<body>
+    <input type="text" onkeyup="inputName(this)" placeholder="Name.."/>
+    <input type="number" onkeyup="inputAge(this)" placeholder="Age.."/>
+    <button type="button" onclick="submit()">Submit</button>
+    <script type="text/javascript">
+        var sv = {
+            name:"",
+            age:0
+        }
+        function inputName(e) {
+            sv.name = e.value;
+        }
+        function inputAge(e) {
+
+        }
+        function submit() {
+            console.log(sv);
+        }
+    </script>
+</body>
+</html>
