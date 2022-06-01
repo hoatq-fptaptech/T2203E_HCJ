@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VietLot</title>
+</head>
+<body>
+    <input class="ip" type="number" id="n1" placeholder="Number 1"/>
+    <input class="ip" type="number" id="n2" placeholder="Number 2"/>
+    <input class="ip" type="number" id="n3" placeholder="Number 3"/>
+    <input class="ip" type="number" id="n4" placeholder="Number 4"/>
+    <input class="ip" type="number" id="n5" placeholder="Number 5"/>
+    <input class="ip" type="number" id="n6" placeholder="Number 6"/>
+    <button type="button" onclick="checkResult();">Xem kết quả</button>
+    <p id="msg" style="color:red;display: none">Vui lòng điền đủ 6 giá trị khác nhau</p>
+    <script type="text/javascript">
+        function checkResult() {
+            var luckyNumbers = [];
+            var ips = document.getElementsByClassName("ip");
+            // var ips2 = document.getElementsByTagName("input");
+            // console.log(ips2);
+            // var ips = document.querySelectorAll("input.ip");
+            // console.log(ips);
+            for(var i = 0;i< ips.length;i++){
+                var n = parseInt(ips[i].value);
+                if(isNaN(n) || n<0 || n>45 || luckyNumbers.includes(n)){
+                    document.getElementById("msg").style.display = "block";
+                    return;
+                }
+                luckyNumbers.push(n);
+            }
+
+            // for(var i=1;i<=6;i++){
+            //     var n = parseInt(document.getElementById("n"+i).value);
+            //     if(isNaN(n) || n<0 || n>45 || luckyNumbers.includes(n)){
+            //         document.getElementById("msg").style.display = "block";
+            //         return;
+            //     }
+            //     luckyNumbers.push(n);
+            // }
+
+            // sinh ra 6 so ngau nhien tu 0 ->45
+            var randomNumbers = [];// mang chua 6 so ngau nhien
+            // tao ngau nhien 6 so tu 0->45
+            while (randomNumbers.length < 6) {
+                var r = Math.random();
+                r = r * 46;// muon co gia tri 45 phai nhan voi 46
+                r = parseInt(r);
+                if (!randomNumbers.includes(r)) {
+                    randomNumbers.push(r);
+                }
+            }
+
+            console.log(randomNumbers);
+            var dem = 0;
+
+            for (var i = 0; i < randomNumbers.length; i++) {
+                if (luckyNumbers.includes(randomNumbers[i])) {
+                    dem++;
+                }
+            }
+
+            switch (dem) {
+                case 6:
+                    alert("Chúc mừng, bạn đã trúng 100 tỷ");
+                    break;
+                case 5:
+                    alert("Chúc mừng, bạn đã trúng 10 triệu");
+                    break;
+                case 4:
+                    alert("Chúc mừng, bạn đã trúng 300.000");
+                    break;
+                case 3:
+                    alert("Chúc mừng, bạn đã trúng 50.000");
+                    break;
+                default:
+                    alert("Chúc may mắn lần sau!");
+            }
+
+        }
+    </script>
+</body>
+</html>
